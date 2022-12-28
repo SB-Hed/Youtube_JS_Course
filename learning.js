@@ -476,3 +476,5 @@ return value * multiplier
 
 console.log(multByFactor(10,2))      //20
 console.log(multByFactor(5))     //5
+
+//comment
