@@ -423,15 +423,12 @@ console.log(myFunction(5, 3)) */
 
 
 //ФУНКЦІОНАЛЬНИЙ ВИРАЗ У ВИКЛИКУ ІНШОЇ ФУНКЦІЇ
-
 /* setTimeout(function() {
     console.log('Відкладене повідомлення')
 }, 1000) */
 
 
-
 //СТРІЛОЧНА ФУНКЦІЯ ( не має імені та позначається за рахунок => ) . Також треба розуміти, що стрілочна функція є Виразом
-
 /* (a, b) => {
     let c
     a = a + 1
@@ -439,8 +436,8 @@ console.log(myFunction(5, 3)) */
     return c
 } */
 
-//Приклад, як дати ім'я Стрілочній функції
 
+//Приклад, як дати ім'я Стрілочній функції
 /* const myFunction = (a, b) => {
     let c
     a = a + 1
@@ -469,11 +466,47 @@ myFunction(5, 3) // 9 */
 
 
 
-//ЗНАЧЕННЯ ПАРАМЕТРІВА ФУНКЦІЇ ПО ЗАМОВЧЮВАННЮ
-function multByFactor(value, multiplier = 1) {
+//ЗНАЧЕННЯ ПАРАМЕТРІВ ФУНКЦІЇ ПО ЗАМОВЧЮВАННЮ
+/*Приклад №1:
+ function multByFactor(value, multiplier = 1) {
 return value * multiplier
 }
 
 console.log(multByFactor(10,2))      //20
-console.log(multByFactor(5))     //5
+console.log(multByFactor(5))     //5 */
 
+
+
+//ЗНАЧЕННЯ ПАРАМЕТРІВ ПО ЗАМОВЧЮВАННЮ, ВИКОРИСТОВУЮЧИ СИНТАКСИС "АНОНІМНИХ ФУНКЦІОНАЛЬНИХ ВИРАЗІВ"
+/* const anonFunc = function(value, multiplier = 1){
+    return value * multiplier
+}
+
+console.log(anonFunc(10, 2))        //20
+console.log(anonFunc(5))        //5 */
+
+
+
+//ЗНАЧЕННЯ ПАРАМЕТРІВ ПО ЗАМОВЧЮВАННЮ, ВИКОРИСТОВУЮЧИ СИНТАКСИС "СТРІЛОЧНИХ ФУНКЦІЙ"
+/* const arrowFunc = (value, multiplier = 1) => {
+    return value * multiplier
+}
+
+console.log(arrowFunc(5, 2))        //10
+console.log(arrowFunc(3))   */     //3
+
+
+
+//ЗНАЧЕННЯ ПАРАМЕТРІВ ФУНКЦІЇ ПО ЗАМОВЧЮВАННЮ
+//Приклад №2:
+const newPost = (post, addedAt = Date()) => ({      //  ({}) - це є неявне повернення об'єкта. Date() - це функція яка повертає дату.
+    ...post,        // ... - розкладає об'єкт на властивості
+    addedAt,        // addedAt бере значення по замовчюванню, а саме Date() і додає його до об'єкта
+})
+
+const firstPost = {
+    id: 1,
+    author: 'Hed',
+}
+
+console.log(newPost(firstPost))
