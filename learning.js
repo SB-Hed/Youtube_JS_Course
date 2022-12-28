@@ -499,7 +499,7 @@ console.log(arrowFunc(3))   */     //3
 
 //ЗНАЧЕННЯ ПАРАМЕТРІВ ФУНКЦІЇ ПО ЗАМОВЧЮВАННЮ
 //Приклад №2:
-const newPost = (post, addedAt = Date()) => ({      //  ({}) - це є неявне повернення об'єкта. Date() - це функція яка повертає дату.
+/* const newPost = (post, addedAt = Date()) => ({      //  ({}) - це є неявне повернення об'єкта. Date() - це функція яка повертає дату.
     ...post,        // ... - розкладає об'єкт на властивості
     addedAt,        // addedAt бере значення по замовчюванню, а саме Date() і додає його до об'єкта
 })
@@ -509,4 +509,19 @@ const firstPost = {
     author: 'Hed',
 }
 
-console.log(newPost(firstPost))
+console.log(newPost(firstPost)) */
+
+const newPost = function(post, addedAt = Date()){      
+   let addedDate = {
+    ...post,
+    addedAt,
+   }
+   return addedDate
+}
+
+const firstPost = {
+    id: 1,
+    author: 'Hed',
+}
+
+console.table(newPost(firstPost))
