@@ -529,3 +529,41 @@ const firstPost = {
 console.table(newPost(firstPost)) */
 
 
+
+//ОПРАЦЮВАННЯ ПОМИЛОК
+/* const fnWithError = () => {
+    throw new Error('Some error')
+}
+
+fnWithError()
+
+console.log('Continue...')  */     //В результаті виконання коду зупиниться на fnWithError і я побачу помилку "Uncaught Error: Some error"
+
+//ЯК БОРОТИСЬ З ТАКИМИ ПОМИЛКАМИ ЯК ЗАЗНАЧЕНО ВИЩЕ
+//Приклад конструкції
+/* try {
+    //Виконання блоку кода
+}
+catch (error) {
+    //Цей блок виконається у випадку виникнення помилки у блоці "try"
+} */
+
+
+//ПРИКЛАД РОБОТИ "try/catch":
+/* const fnWithError = () => {
+    throw new Error ('Some error')
+}
+
+try{
+    fnWithError()
+}
+catch (error){
+    //console.error(error)        //console.error використовується для того щоб піймати помилку і вивести її на екран саме як помилку, але код далі виконується, бо помилка піймана
+    console.log(error.message)      //такий варінт просто покаже повідомлення 'Some error', яке ми вказали на початку у функції fnWithError і продовжить виконання коду далі
+}
+
+console.log('Try one more time...') */
+
+
+
+//ІНСТРУКЦІЇ:
