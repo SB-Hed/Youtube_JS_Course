@@ -196,7 +196,7 @@ console.log(user2.userName) */
     userName: 'Bob'
 }
 
-const user2 = JSON.parse(JSON.stringify(user))      //Створення другого об'єкта userTwo на основі попереднього user із допомогою парсування та розпарсування
+const user2 = JSON.parse(JSON.stringify(user))      //Створення другого об'єкта userTwo на основі попереднього user із допомогою парсування (JSON.parse) та розпарсування (JSON.stringify)
 user2.userName = 'Mike'
 
 console.log(user.userName)
@@ -248,7 +248,7 @@ console.log(result)  */    //Вивід змінної result у консоль
 
 
 
-//СТВОРЕННЯ КОПІЇ ОБ'ЄКТА І ЙОГО ВИКОРИСТАННЯ У ФУНКЦІЇ
+//СТВОРЕННЯ КОПІЇ ОБ'ЄКТА І ЙОГО ВИКОРИСТАННЯ У ФУНКЦІЇ 
 /*ОПИС: 
 Ми створюємо об'єкт personOne.
 Далі створюємо функцію increasePersonAge, у якій ми створюємо змінну(об'єкт) updatedPerson, яка буде копією об'єкту personOne для 
@@ -466,7 +466,8 @@ myFunction(5, 3) // 9 */
 
 
 
-//ЗНАЧЕННЯ ПАРАМЕТРІВ ФУНКЦІЇ ПО ЗАМОВЧЮВАННЮ
+//ЗНАЧЕННЯ ПАРАМЕТРІВ ФУНКЦІЇ ПО ЗАМОВЧЮВАННЮ !!!
+
 /*Приклад №1:
  function multByFactor(value, multiplier = 1) {
 return value * multiplier
@@ -477,7 +478,7 @@ console.log(multByFactor(5))     //5 */
 
 
 
-//ЗНАЧЕННЯ ПАРАМЕТРІВ ПО ЗАМОВЧЮВАННЮ, ВИКОРИСТОВУЮЧИ СИНТАКСИС "АНОНІМНИХ ФУНКЦІОНАЛЬНИХ ВИРАЗІВ"
+//ЗНАЧЕННЯ ПАРАМЕТРІВ ФУНКЦІЇ ПО ЗАМОВЧЮВАННЮ, ВИКОРИСТОВУЮЧИ СИНТАКСИС "АНОНІМНИХ ФУНКЦІОНАЛЬНИХ ВИРАЗІВ"
 /* const anonFunc = function(value, multiplier = 1){
     return value * multiplier
 }
@@ -511,7 +512,8 @@ const firstPost = {
 
 console.log(newPost(firstPost)) */
 
-const newPost = function(post, addedAt = Date()){      
+//Використання явного повернення об'єкта у ЗНАЧЕНІ ПАРАМЕТРІВ ФУНКЦІЇ ПО ЗАМОВЧЮВАННЮ
+/* const newPost = function(post, addedAt = Date()){      
    let addedDate = {
     ...post,
     addedAt,
@@ -524,4 +526,6 @@ const firstPost = {
     author: 'Hed',
 }
 
-console.table(newPost(firstPost))
+console.table(newPost(firstPost)) */
+
+
