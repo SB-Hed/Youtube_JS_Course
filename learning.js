@@ -553,7 +553,6 @@ catch (error) {
 /* const fnWithError = () => {
     throw new Error ('Some error')
 }
-
 try{
     fnWithError()
 }
@@ -561,9 +560,89 @@ catch (error){
     //console.error(error)        //console.error використовується для того щоб піймати помилку і вивести її на екран саме як помилку, але код далі виконується, бо помилка піймана
     console.log(error.message)      //такий варінт просто покаже повідомлення 'Some error', яке ми вказали на початку у функції fnWithError і продовжить виконання коду далі
 }
-
 console.log('Try one more time...') */
 
 
 
-//ІНСТРУКЦІЇ:
+//ІНСТРУКЦІЇ: Інструкції зазвичай закінчуються крапкою з комою (;) АЛЕ у JS можна опускати крапку з комою. Тому раніше ми її і не використовували.
+//Приклади:
+/* let a;
+const b = 5;
+if (a > b) {
+    console.log('a is larger');     //тут інструкцією є саме "console.log('a is larger');" Примітка: після фігурних скобок ";" не потрібна.
+}
+for (let i = 0; i++; i=5) {
+    console.log(i);     //тут інструкцією є саме "console.log(i);" Примітка: після фігурних скобок ";" не потрібна.
+} */
+
+//ВИРАЗИ-ІНСТРУКЦІЇ:
+/* 'abc';
+a = a + 3;
+c = a + b;
+d = 'Good ' + 'Evening';
+myFunction(c, d);
+console.log('Hey'); */
+
+
+
+//МАСИВИ: (нумерація елементів масиву починається з нуля)
+//Приклад 1:
+/* const myArray = [1, 2, 3]
+console.log(myArray)    //[1, 2, 3]
+//Приклад 2:
+const myArray2 = new Array(1, 2, 3)
+console.log(myArray2) */
+
+
+//Порівняння масивів:
+/* const myArray = [1, true, 'HED']
+const myArray2 = [1, true, 'HED']
+const result1 = myArray === myArray2        //false - тому що myArray та myArray2 це два різні об'єкти, які зберігаються у двох різних ячейках пам'яті(тобто це дві різні силки)
+console.log(result1)
+//Але якщо створити myArray3 який буде дорівнювати myArray - то це буде посилання myArray3 на myArray, і тоді вони будуть однаковими
+//Приклад:
+const myArray3 = myArray
+const result2 = myArray === myArray3        //true
+console.log(result2) */
+
+
+//ЯК ПРАЦЮВАТИ З ЕЛЕМЕНТАМИ МАСИВА:
+//Приклад: 
+/* const myArray = [1, true, 'HED']
+console.log(myArray[0])     //1
+console.log(myArray[1])     //true  
+console.log(myArray[2])     //HED
+console.log(myArray.length) */     //3 - довжина масива(тобто кількість елементів у масиві)
+
+//Зміна кількості елементів у масиві (ТАК РОБИТИ НЕ РЕКОМЕНДУЄТЬСЯ)
+/* const myArray = [1, true, 'HED']
+console.log(myArray.length)     //3
+myArray.length = 7      //Тут ми перепризначили довжину масива на 7 елементів, три із яких ми створили і 4 пустих об'єкти
+console.log(myArray.length)     //7
+console.log(myArray)  */       //Результат такого виводу: [ 1, true, 'HED', <4 empty items> ]
+
+//Як додавати нові елементи у масив:
+/* 
+//Приклад 1:
+const myArray = [1, 2, 3, 4]
+console.log(myArray)        //[1, 2, 3, 4]
+console.log(myArray.length)     //4
+
+myArray[2] = 'abc'      //Зміна значення 3-го елемента масива з цифри 3 на 'abc'
+
+console.log(myArray)        //[1, 2, 'abc', 4]
+console.log(myArray[2])     //'abc'
+
+myArray[4] = true       //Додавання нового елемента у масив
+
+console.log(myArray)        //[1, 2, 'abc', 4, true]
+console.log(myArray.length)  */    //5 - нова довжина елементу, тому що ми додали новий елемент 'true'
+
+//Приклад 2:
+const myArray = []      //Створення пустого масиву
+console.log(myArray.length)     //0 - довжина масиву
+
+myArray[1] = true       //додавання нового елемента масиву(а саме 2го ел-та) із значенням 'true'
+myArray[3] = 'HED'      //додавання нового елемента масиву (а саме 4го ел-та) із значенням 'HED'
+console.log(myArray)        //[ <1 empty item>, true, <1 empty item>, 'HED' ]
+console.log(myArray.length)     //Довжина масиву = 4
