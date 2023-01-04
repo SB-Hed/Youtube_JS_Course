@@ -639,10 +639,77 @@ console.log(myArray)        //[1, 2, 'abc', 4, true]
 console.log(myArray.length)  */    //5 - нова довжина елементу, тому що ми додали новий елемент 'true'
 
 //Приклад 2:
-const myArray = []      //Створення пустого масиву
+/* const myArray = []      //Створення пустого масиву
 console.log(myArray.length)     //0 - довжина масиву
 
 myArray[1] = true       //додавання нового елемента масиву(а саме 2го ел-та) із значенням 'true'
 myArray[3] = 'HED'      //додавання нового елемента масиву (а саме 4го ел-та) із значенням 'HED'
 console.log(myArray)        //[ <1 empty item>, true, <1 empty item>, 'HED' ]
-console.log(myArray.length)     //Довжина масиву = 4
+console.log(myArray.length)  */    //Довжина масиву = 4
+
+//МЕТОДИ МАСИВІВ(функції вищого порядку в масивах): (викликаються через крапку: myArray.length або myArray.push). Методів велика кількість, і усіх них можна переглянути через крапку
+//PUSH: Додає новий елемент у кінець масиву
+/* const myArray = [1, 2, 3]
+console.log(myArray)        //[1, 2, 3]
+
+myArray.push(4)     //додаємо новий елемент зі значенням "4", у лапках вказуємо значення останнього елемента (наприклад '4', 'HED', 'true' і т.п.)
+console.log(myArray)        //[1, 2, 3, 4]
+
+myArray.push(true)
+console.log(myArray) */        //[1, 2, 3, 4, true]
+
+//POP: Видаляє останній елемент у масиві. Окрім того pop повертає значення яке він видалив. Тобто результат можна присвоїти змінній і вивести це значення.
+/* const myArray = [1, 2, 3]
+console.log(myArray)        //[1, 2, 3]
+
+myArray.pop()     //видаляємо останній елемент масиву
+console.log(myArray)        //[1, 2]
+
+const removedElement = myArray.pop()        //видаляємо останній елемент масиву і присвоюємо значення цього елемента змінній removedElement
+console.log(myArray)        //[1]
+console.log(removedElement)  */    //2
+
+//UNSHIFT: Додає новий елемент у початок масиву
+/* const myArray = [1, 2, 3]
+console.log(myArray)        //[1, 2, 3]
+myArray.unshift(true)       //додаємо новий елемент у початок масиву
+console.log(myArray)  */       //[true, 1, 2, 3]
+
+//SHIFT: Видаляє перший елемент масиву
+/* const myArray = [1, 2, 3]
+console.log(myArray)        //[1, 2, 3]
+
+myArray.shift()
+console.log(myArray) */        //[2, 3]
+
+//FOREACH: у цьому методі передається коллбек функція (ми самі вказуємо, що саме буде робити ця функція) яка буде працювати з кожним елементом масива
+/* const myArray = [1, 2, 3]
+console.log(myArray)        //[1, 2, 3]
+
+myArray.forEach(el => console.log(el * 2))      //в результаті у консоль виведетуться числа 2, 4, 6 (тобто кожен елемент масиву, по черзі, множиться на 2 і виводиться на екран)
+
+console.log(myArray)  */       //[1, 2, 3] Оригінальний масив при цьому не змінився
+
+//MAP: у цьому методі також передається коллбек функція. Але метод MAP повертає новий масив
+/* const myArray = [1, 2, 3]
+console.log(myArray)        //[1, 2, 3]
+
+const newArray = myArray.map(el => el * 3)      //map повертає новий масив [ 3, 6, 9 ] із результату коллбек функції яка вказана у лапках 
+
+console.log(newArray)       //результат виклику MAP
+console.log(myArray)   */      //оригінальний масив не змінюється
+
+//або ж може бути такий запис: у ньому використовується ЯВНЕ повернення результату функції 
+const myArray = [1, 2, 3]
+console.log(myArray)        //[1, 2, 3]
+
+const newArray = myArray.map((el) => {
+     return el * 3     //map повертає новий масив [ 3, 6, 9 ] із результату коллбек функції яка вказана у фігурних лапках 
+})
+// або ж:
+const newArray2 = myArray.map(function (el) {
+    return el * 3     //map повертає новий масив [ 3, 6, 9 ] із результату коллбек функції яка вказана у фігурних лапках
+})
+console.log(newArray)       //результат виклику MAP
+console.log(newArray2) 
+console.log(myArray)        //оригінальний масив не змінюється
