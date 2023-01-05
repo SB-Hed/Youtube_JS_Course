@@ -700,7 +700,7 @@ console.log(newArray)       //результат виклику MAP
 console.log(myArray)   */      //оригінальний масив не змінюється
 
 //або ж може бути такий запис: у ньому використовується ЯВНЕ повернення результату функції 
-const myArray = [1, 2, 3]
+/* const myArray = [1, 2, 3]
 console.log(myArray)        //[1, 2, 3]
 
 const newArray = myArray.map((el) => {
@@ -712,4 +712,103 @@ const newArray2 = myArray.map(function (el) {
 })
 console.log(newArray)       //результат виклику MAP
 console.log(newArray2) 
-console.log(myArray)        //оригінальний масив не змінюється
+console.log(myArray) */        //оригінальний масив не змінюється
+
+
+
+//ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ: дозволяє створювати нові змінні із властивостей якогось іншого об'єкта
+//Приклад:
+/* const userProfile = {
+    name: 'HED',
+    commentsQty: 23,
+    hasSignedAgreement: false,
+}
+//Далі ми оголошуємо нові змінні і присвоюємо їм значення на основі начень властивостей об'єкта userProfile
+const { name, commentsQty } = userProfile
+const { hasSignedAgreement } = userProfile
+
+console.log(name)       //HED
+console.log(commentsQty)     //23
+console.log(hasSignedAgreement)  */    //false
+
+
+//ДЕСТРУКТУРИЗАЦІЯ МАСИВІВ:
+/* const fruits = ['Apple', 'Banana']
+
+const [fruitOne, fruitTwo] = fruits
+
+console.log(fruitOne)       //Apple
+console.log(fruitTwo)  */      //Banana
+
+
+//ДЕСТРУКТУРИЗАЦІЯ У ФУНКЦІЯХ:
+/* const userProfile = {
+    name: 'HED',
+    commentsQty: 23,
+    hasSignedAgreement: false,
+}
+
+const userInfo = ({ name, commentsQty }) => {
+    if (!commentsQty) {
+        return `User ${name} has no comments`
+    }
+
+    return `User ${name} has ${commentsQty} comments`
+}
+
+console.log(userInfo(userProfile))  */      //User HED has 23 comments
+
+
+
+//УМОВНІ ІНСТРУКЦІЇ: 
+// if; if...else; else...if; switch; тернарний оператор;
+// IF: якщо Умова правдива, блок коду виконується. Якщо не правдива, блок коду не виконується
+/* if (Умова) {
+    //Блок кода, який виконується ОДИН РАЗ, якщо Умова правдива!!!
+} */
+//Приклад :
+/* let val = 10
+
+if (val > 5) {      //якщо змінна val більше 5, то виконується блок коду
+    val += 20       //до змінної val додаємо 20 і присвоюємо змінній val нове значення
+}
+
+console.log(val)  */       //30
+
+//Приклад2: якщо у об'єкті person не існує властивості name, то на екрані з'явиться повідомлення
+/* const person = {
+    age: 15,
+}
+//Далі у if ми перевіряємо, чи є властивість name у об'єкта person, і чи вона має якесь значення. 
+//Символ "!" говорить: якщо властивості name не існує або має значення false, undefined, 0, 'пустий рядок', то виконати блок коду з виводом тексту
+if (!person.name) {     
+    console.log("There is no User Name!")
+}
+//Тут ми перевіряємо чи значення age < 18, і якщо це true, то виконується блок коду
+if (person.age < 18) {
+    console.log("Access denied! You are under 18 years old!")
+}
+ */
+
+
+//IF ELSE:
+/* if (Умова) {
+    //Блок кода, який виконується ОДИН РАЗ, якщо Умова Вірна
+}
+else {
+    //Блок кода, який виконується ОДИН РАЗ, якщо Умова НЕ Вірна
+}
+ */
+
+//Приклад:
+/* let val = 10
+
+if (val < 5) {      //умова val < 5 поверне значення false(бо val=10), тому блок коду if не виконається, а виконається блок коду else
+    val += 20       //рівносильно val = val + 20
+} else {
+    val -=20        //рівносильно val = val - 20
+}
+
+console.log(val)        //-10
+ */
+
