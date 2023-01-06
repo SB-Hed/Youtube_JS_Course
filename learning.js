@@ -837,3 +837,16 @@ if (age > 18) {
 
 
 //ВИКОРИСТАННЯ IF У ФУНКЦІЯХ:
+const sumPositiveNumbers = (a, b) => {
+    if (typeof a !== 'number' || typeof b !== 'number') {       //Тут ми робимо перевірку, чи аргумент a та b числа
+        return 'One of the arguments is not a number.'
+    }
+//якщо у попередньому if при перевірці умови були повернуті значення true для a та b (тобто було введено два числа), то ми переходимо до наступного if.
+    if (a <= 0 || b <= 0) {     //Тут ми перевіряємо чи числа більше 0 (тобто не від'ємні)
+        return 'Numbers are not positive.'
+    }
+//якщо було введено два числа і вони більше 0(позитивні), то ми переходимо до наступного кроку return, у якому виконується суммування a та b
+    return a + b
+}
+
+console.log(sumPositiveNumbers(10, 'word'))
