@@ -884,7 +884,7 @@ switch (month) {
  */
 
 //Приклад 2: перевірка слова
-const color = 'Red'
+/* const color = 'Red'
 
 switch (color) {
     case 'Blue':
@@ -902,3 +902,38 @@ switch (color) {
     default:
         console.log('Type the color name')
 }
+ */
+
+
+
+//ТЕРНАРНИЙ ОПЕРАТОР: він має три операнда. Конструкція з тернарним оператором-це вираз. А вираз завжди повертає значення.
+//Синтаксис: 
+/* Умова       //Будь який вираз може стояти на місці умови
+    ? Вираз 1       //Якщо умова правдива, тоді повертається результат Виразу 1
+    : Вираз 2       //Якщо умова хибна, тоді повертається результат Виразу 2
+ */
+
+//Приклад 1:
+/* const value = 11
+
+value
+    ? console.log('Умова вірна')
+    : console.log('Умова не вірна')
+ */
+
+//Приклад 2: Як викликати функцію
+/* const value1 = 11
+const value2 = 25
+
+value1 && value2
+    ? myFunction1(value1, value2)       //Ми викликаємо функцію і передаємо в неї значення value1 та value2.
+    : myFunction2()
+ */
+
+//Приклад 3:
+let value = 11
+console.log(value >= 0 ? value : -value)        //11
+//Присвоєння результата змінній:
+value = -5
+const res = value >= 0 ? value : -value
+console.log(res)        //5
