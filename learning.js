@@ -837,7 +837,7 @@ if (age > 18) {
 
 
 //ВИКОРИСТАННЯ IF У ФУНКЦІЯХ:
-const sumPositiveNumbers = (a, b) => {
+/* const sumPositiveNumbers = (a, b) => {
     if (typeof a !== 'number' || typeof b !== 'number') {       //Тут ми робимо перевірку, чи аргумент a та b числа
         return 'One of the arguments is not a number.'
     }
@@ -850,3 +850,55 @@ const sumPositiveNumbers = (a, b) => {
 }
 
 console.log(sumPositiveNumbers(10, 'word'))
+ */
+
+
+//SWITCH: Це те саме, що if...else, але тут ми вказуємо який саме "case" буде виконуватись, якщо його значення буде дорівнювати Виразу.
+/* switch (Вираз) {
+    case A:
+        //Якась дія, якщо Вираз === A
+        break       //Вихід, якщо А === Виразу
+    case B:
+        //Якась дія, якщо Вираз === B
+        break       //Вихід, якщо B === Виразу
+    default:
+        //Якась дія по замовчуванню, якщо Вираз не дорівнює A і не дорівнює B
+} */
+
+//Приклад 1: перевірка чисел
+/* const month = 2
+
+switch (month) {
+    case 12:        //Відбувається перевірка чи 12 дорівнює значенню month(тобто 2)
+        console.log('Грудень')
+        break
+    case 1:         //Відбувається перевірка чи 1 дорівнює значенню month(тобто 2)
+        console.log('Січень')
+        break
+    case 2:         //Відбувається перевірка чи 2 дорівнює значенню month(тобто 2). Він дорівнює, тоді буде виконана дія, тобто на екран виведеться "Лютий"
+        console.log('Лютий')
+        break
+    default:
+        console.log('Це не зимовий місяць')
+}
+ */
+
+//Приклад 2: перевірка слова
+const color = 'Red'
+
+switch (color) {
+    case 'Blue':
+        console.log('The color is Blue')
+        break
+    case 'Yellow':
+        console.log('The color is Yellow')
+        break
+    case 'Red':
+        console.log('The color is Red')
+        break
+    case 'Green':
+        console.log('The color is Green')
+        break
+    default:
+        console.log('Type the color name')
+}
