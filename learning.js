@@ -1238,7 +1238,7 @@ printMyName()       //HED
 //Синтаксис: class ...
 
 //Приклад створення класу: 
-
+/* 
 class Comment {
     constructor(text) {
         this.text = text        //змінна this вказує на Екземпляр класу
@@ -1248,7 +1248,7 @@ class Comment {
     upvote() {
         this.votesQty += 1
     }
-}
+} */
 
 /* =========================================================================================================================================== */
 //СТВОРЕННЯ ЕКЗЕМПЛЯРА КЛАСУ:
@@ -1329,3 +1329,44 @@ console.log(thirdComment.votesQty)      //7
 
 /* =========================================================================================================================================== */
 /* =========================================================================================================================================== */
+//СТАТИЧНІ МЕТОДИ: оголошується за допомогою static. І такі методи належать тільки основному класу, а не новостворенним об'єктам, які використовують цей клас.
+//Приклад:
+/* 
+class Comment {
+    constructor(text) {
+        this.text = text        //змінна this вказує на Екземпляр класу
+        this.votesQty = 0
+    }
+
+    upvote() {
+        this.votesQty += 1
+    }
+
+    static mergeComments(first, second) {       //Метод доступний як властивість класу і НЕ НАСЛІДУЄТЬСЯ екземплярами класу.
+        return `${first} ${second}`
+    }
+}
+
+console.log(Comment.mergeComments('First comment.', 'Second comment.'))
+
+//Але якщо я спробую створити новий об'єкт myComment від класу Comment, то mergeComments не буде для нього доступним.
+//Приклад:
+const myComment = new Comment('My own comment')
+
+console.log(myComment.mergeComments('Some text', 'will be here'))       
+//В результаті я отримаю помилку "myComment.mergeComments is not a function". Тобто "mergeComments" не існує для myComment. А існує тільки для Comment.
+ */
+
+
+/* =========================================================================================================================================== */
+//Розширення інших класів: 
+class NumbersArray extends Array {      //Клас Array існує в JS по замовчюванню. Він створює масив.
+    sum() {
+        return this.reduce((el, acc) => acc += el, 0)       //
+    }
+}
+
+const myArray = new NumbersArray(2, 5, 10)
+
+console.log(myArray)
+console.log(myArray.sum())
