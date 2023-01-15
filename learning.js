@@ -1372,3 +1372,4 @@ const myArray = new NumbersArray(2, 5, 10)
 console.log(myArray)
 console.log(myArray.sum())
 
+//Last comment
